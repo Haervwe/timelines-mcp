@@ -1,0 +1,6 @@
+{
+  "entrypoint": "src/timelines_mcp/server.py",
+  "environment": {
+    "dependencies": ["asyncpg", "chromadb", "aiosqlite", "qdrant-client", "pydantic", "python-dotenv", "pyjwt"]
+  }
+}

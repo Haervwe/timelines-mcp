@@ -84,7 +84,7 @@ class ChromaAdapter:
                 return
         except Exception:  # pragma: no cover
             pass  # ID not found, will insert
-        
+
         # Insert new vector
         self.collection.add(
             ids=[id],

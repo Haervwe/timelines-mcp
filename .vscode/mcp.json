@@ -1,0 +1,13 @@
+{
+	"servers": {
+		"timelines": {
+			"url": "http://127.0.0.1:8900/mcp",
+			"type": "http",
+			"headers": {
+				"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1NTBlODQwMC1lMjliLTQxZDQtYTcxNi00NDY2NTU0NDAwMDAiLCJpc3MiOiJ0aW1lbGluZXMtbWNwLWxvY2FsIiwiYXVkIjoidGltZWxpbmVzLW1jcC1hcGkiLCJpYXQiOjE3NjQ5NzI4NjgsImV4cCI6MTc2NTA1OTI2OCwibmFtZSI6IlRlc3QgVXNlciA1NTBlODQwMC1lMjliLTQxZDQtYTcxNi00NDY2NTU0NDAwMDAiLCJlbWFpbCI6InVzZXItNTUwZTg0MDAtZTI5Yi00MWQ0LWE3MTYtNDQ2NjU1NDQwMDAwQGV4YW1wbGUuY29tIn0.wcksZkeSkI-lOiOJD_41nbUC39Fkc1xu-DP4AA9ZQWo",
+				"Content-Type": "application/json"
+			}
+		}
+	},
+	"inputs": []
+}

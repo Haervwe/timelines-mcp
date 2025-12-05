@@ -5,25 +5,17 @@ Adapters implement ONLY these basic operations.
 Complex queries are built in the repository layer using these primitives.
 """
 
-from datetime import datetime
-from decimal import Decimal
 from typing import Protocol, runtime_checkable
 from uuid import UUID
 
 from .models import (
     Entity,
-    EntityType,
     Event,
-    EventType,
     Project,
     Relationship,
-    RelationType,
     SourceType,
-    StateDelta,
     StateSnapshot,
     Timeline,
-    TimelineStatus,
-    WorldState,
 )
 
 

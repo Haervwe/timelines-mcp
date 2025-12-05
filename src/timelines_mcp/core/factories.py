@@ -7,8 +7,14 @@ Clear, simple names. No abbreviations.
 from ..domain.protocols import StorageAdapter, VectorAdapter
 from ..settings.config import (
     DatabaseConfig,
+)
+from ..settings.config import (
     StorageAdapter as StorageAdapterEnum,
+)
+from ..settings.config import (
     VectorAdapter as VectorAdapterEnum,
+)
+from ..settings.config import (
     config as default_config,
 )
 
@@ -47,10 +53,7 @@ def get_vector_adapter(config: DatabaseConfig | None = None) -> VectorAdapter:
     if cfg.vector_adapter == VectorAdapterEnum.CHROMA:
         from .adapters.chroma import ChromaAdapter
 
-        return ChromaAdapter(
-            persist_directory=cfg.chroma_persist_dir,
-            embedding_model=cfg.chroma_embedding_model,
-        )
+        return ChromaAdapter(persist_directory=str(cfg.chroma_persist_dir))
 
     elif cfg.vector_adapter == VectorAdapterEnum.QDRANT:
         # TODO: Implement QdrantAdapter when ready for production

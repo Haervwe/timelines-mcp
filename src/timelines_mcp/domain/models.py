@@ -6,12 +6,12 @@ All models use strict typing with no Any or generic dicts
 from datetime import UTC, datetime
 from decimal import Decimal
 from enum import Enum
-from uuid import UUID, uuid4
-
-from pydantic import BaseModel, Field, field_validator
 
 # Use typing.TYPE_CHECKING to avoid runtime import
 from typing import TYPE_CHECKING
+from uuid import UUID, uuid4
+
+from pydantic import BaseModel, Field, field_validator
 
 if TYPE_CHECKING:
     from pydantic_core import ValidationInfo

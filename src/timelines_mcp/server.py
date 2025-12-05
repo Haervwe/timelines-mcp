@@ -1,31 +1,14 @@
 """
-Main FastMCP Server
+Main FastMCP Server - Infrastructure Layer
 
-This module initializes and runs the FastMCP server for the timelines application.
+This module initializes the FastMCP server.
+Tools are defined in the tools/ directory and imported here.
 """
 
 from fastmcp import FastMCP
 
 # Initialize the FastMCP server
-mcp = FastMCP("Timelines MCP Server")
+mcp = FastMCP(name="Timelines MCP")
 
-
-@mcp.tool()
-def get_server_info() -> dict:
-    """Get information about the Timelines MCP server."""
-    return {
-        "name": "Timelines MCP Server",
-        "version": "0.1.0",
-        "description": "MCP server for maintaining coherent timelines in narratives",
-    }
-
-
-def main():
-    """Run the server."""
-    # The FastMCP server will be started by the MCP protocol
-    # This can be customized based on deployment needs
-    pass
-
-
-if __name__ == "__main__":
-    main()
+# Import and register tools (they will auto-register via decorators)
+from .tools import project_tools  # noqa: F401

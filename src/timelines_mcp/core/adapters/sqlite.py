@@ -179,7 +179,7 @@ class SQLiteAdapter:
             if data.get('number_val') is not None:
                 data['number_val'] = str(data['number_val'])
             return data
-        
+
         return json.dumps({k: convert_value(v.value) for k, v in metadata.properties.items()})
 
     @staticmethod
@@ -206,7 +206,7 @@ class SQLiteAdapter:
             if data.get('number_val') is not None:
                 data['number_val'] = str(data['number_val'])
             return data
-        
+
         return json.dumps({k: convert_value(v.value) for k, v in properties.properties.items()})
 
     @staticmethod
@@ -232,7 +232,7 @@ class SQLiteAdapter:
             if data['value'].get('number_val') is not None:
                 data['value']['number_val'] = str(data['value']['number_val'])
             return data
-        
+
         return json.dumps(
             {
                 "global_changes": {k: convert_property(v) for k, v in delta.global_changes.items()},
@@ -247,14 +247,14 @@ class SQLiteAdapter:
     def _deserialize_state_delta(data: str) -> StateDelta:
         """Deserialize StateDelta from JSON"""
         parsed = json.loads(data)
-        
+
         def convert_property(prop_data: dict) -> EntityProperty:
             if prop_data['value'].get('datetime_val'):
                 prop_data['value']['datetime_val'] = datetime.fromisoformat(prop_data['value']['datetime_val'])
             if prop_data['value'].get('number_val') is not None:
                 prop_data['value']['number_val'] = Decimal(prop_data['value']['number_val'])
             return EntityProperty(**prop_data)
-        
+
         return StateDelta(
             global_changes={k: convert_property(v) for k, v in parsed["global_changes"].items()},
             entity_changes={
@@ -273,7 +273,7 @@ class SQLiteAdapter:
             if data['value'].get('number_val') is not None:
                 data['value']['number_val'] = str(data['value']['number_val'])
             return data
-        
+
         return json.dumps(
             {
                 "global_properties": {
@@ -290,14 +290,14 @@ class SQLiteAdapter:
     def _deserialize_world_state(data: str) -> WorldState:
         """Deserialize WorldState from JSON"""
         parsed = json.loads(data)
-        
+
         def convert_property(prop_data: dict) -> EntityProperty:
             if prop_data['value'].get('datetime_val'):
                 prop_data['value']['datetime_val'] = datetime.fromisoformat(prop_data['value']['datetime_val'])
             if prop_data['value'].get('number_val') is not None:
                 prop_data['value']['number_val'] = Decimal(prop_data['value']['number_val'])
             return EntityProperty(**prop_data)
-        
+
         return WorldState(
             global_properties={
                 k: convert_property(v) for k, v in parsed["global_properties"].items()

@@ -14,10 +14,27 @@ from .core import (
     initialize_storage,
     initialize_vector,
 )
+from .server import mcp
 from .services import TimelineContext, TimelineService
 from .settings import DatabaseConfig, StorageAdapter, VectorAdapter, config
 
 __version__ = "0.1.0"
+
+__all__ = [
+    "mcp",
+    "TimelineService",
+    "TimelineContext",
+    "DatabaseConfig",
+    "StorageAdapter",
+    "VectorAdapter",
+    "config",
+    "get_storage_adapter",
+    "get_vector_adapter",
+    "initialize_storage",
+    "initialize_vector",
+    "close_storage",
+    "close_vector",
+]
 
 __all__ = [
     # Version
