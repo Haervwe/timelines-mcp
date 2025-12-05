@@ -13,7 +13,7 @@ from uuid import UUID
 
 import aiosqlite
 
-from ..domain.models import (
+from ...domain.models import (
     Entity,
     EntityProperties,
     EntityProperty,

@@ -15,7 +15,7 @@ from datetime import datetime
 from decimal import Decimal
 from uuid import UUID
 
-from .domain.models import (
+from ..domain.models import (
     Entity,
     EntityEventLink,
     EntityType,
@@ -28,7 +28,7 @@ from .domain.models import (
     Timeline,
     WorldState,
 )
-from .domain.repository import TimelineRepository
+from ..domain.repository import TimelineRepository
 
 
 class TimelineService:

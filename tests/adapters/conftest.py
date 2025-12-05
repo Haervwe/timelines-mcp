@@ -7,8 +7,8 @@ Also provides factory fixtures needed for adapter tests.
 
 import pytest
 
-from timelines_mcp.adapters.chroma import ChromaAdapter
-from timelines_mcp.adapters.sqlite import SQLiteAdapter
+from timelines_mcp.core.adapters.chroma import ChromaAdapter
+from timelines_mcp.core.adapters.sqlite import SQLiteAdapter
 
 
 # ==========================================

@@ -15,10 +15,10 @@ from datetime import UTC, datetime
 from decimal import Decimal
 from uuid import uuid4
 
-from timelines_mcp.config import DatabaseConfig
-from timelines_mcp.di import get_storage_adapter, get_vector_adapter
+from timelines_mcp.core import get_storage_adapter, get_vector_adapter
 from timelines_mcp.domain.models import EntityType, EventType
 from timelines_mcp.services import TimelineContext, TimelineService
+from timelines_mcp.settings import DatabaseConfig
 
 
 async def example_usage():

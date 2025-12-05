@@ -4,19 +4,13 @@ Factory Functions - Instantiate adapters based on configuration
 Clear, simple names. No abbreviations.
 """
 
-from .config import (
+from ..domain.protocols import StorageAdapter, VectorAdapter
+from ..settings.config import (
     DatabaseConfig,
-)
-from .config import (
     StorageAdapter as StorageAdapterEnum,
-)
-from .config import (
     VectorAdapter as VectorAdapterEnum,
-)
-from .config import (
     config as default_config,
 )
-from .domain.protocols import StorageAdapter, VectorAdapter
 
 
 def get_storage_adapter(config: DatabaseConfig | None = None) -> StorageAdapter:

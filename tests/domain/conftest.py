@@ -16,7 +16,7 @@ import pytest
 @pytest.fixture
 async def sqlite_adapter():
     """Provides an in-memory SQLite adapter with automatic cleanup"""
-    from timelines_mcp.adapters.sqlite import SQLiteAdapter
+    from timelines_mcp.core.adapters.sqlite import SQLiteAdapter
     
     adapter = SQLiteAdapter(":memory:")
     await adapter.initialize()

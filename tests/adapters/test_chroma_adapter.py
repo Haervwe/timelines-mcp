@@ -256,7 +256,7 @@ async def test_persistent_chroma_adapter(chroma_persistent_adapter):
 
 async def test_initialize_not_called_error():
     """Test operations fail gracefully if initialize not called"""
-    from timelines_mcp.adapters.chroma import ChromaAdapter
+    from timelines_mcp.core.adapters.chroma import ChromaAdapter
     
     # Create new adapter without initializing
     adapter = ChromaAdapter(collection_name="test_uninitialized")
@@ -279,7 +279,7 @@ async def test_persistent_directory_creation(tmp_path):
     """Test that persistent directory is created if it doesn't exist"""
     import os
     import uuid
-    from timelines_mcp.adapters.chroma import ChromaAdapter
+    from timelines_mcp.core.adapters.chroma import ChromaAdapter
 
     persist_dir = tmp_path / "chroma_test"
     adapter = ChromaAdapter(

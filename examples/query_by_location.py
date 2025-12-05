@@ -13,7 +13,7 @@ from datetime import UTC, datetime
 from decimal import Decimal
 from uuid import uuid4
 
-from timelines_mcp.di import close_storage, get_storage_adapter, initialize_storage
+from timelines_mcp.core import close_storage, get_storage_adapter, initialize_storage
 from timelines_mcp.domain.models import (
     EntityProperties,
     EntityProperty,
