@@ -2,9 +2,28 @@
 Domain model test fixtures
 
 Provides polyfactory factory fixtures for generating test domain models.
+Also provides adapter fixtures needed for integration tests.
 """
 
 import pytest
+
+
+# ==========================================
+# Adapter Fixtures (for domain integration tests)
+# ==========================================
+
+
+@pytest.fixture
+async def sqlite_adapter():
+    """Provides an in-memory SQLite adapter with automatic cleanup"""
+    from timelines_mcp.adapters.sqlite import SQLiteAdapter
+    
+    adapter = SQLiteAdapter(":memory:")
+    await adapter.initialize()
+    
+    yield adapter
+    
+    await adapter.close()
 
 
 # ==========================================

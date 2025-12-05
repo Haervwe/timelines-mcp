@@ -54,16 +54,7 @@ class ChromaAdapter:
 
     async def close(self) -> None:
         """Cleanup connections and release resources"""
-        # Call ChromaDB's close() method to properly shut down background threads
-        if self.client is not None:
-            try:
-                # ChromaDB client has a close() method to release resources
-                if hasattr(self.client, 'close'):
-                    self.client.close()
-            except Exception:
-                # Ignore errors during cleanup
-                pass
-        
+
         self.collection = None
         self.client = None
 
